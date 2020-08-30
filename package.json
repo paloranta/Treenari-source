@@ -1,0 +1,54 @@
+{
+  "name": "treenari",
+  "private": true,
+  "description": "A thing to remind you of your workouts",
+  "version": "0.1.0",
+  "author": "Paloranta",
+  "dependencies": {
+    "@loadable/component": "^5.13.1",
+    "browser-monads": "^1.0.0",
+    "darkmode-js": "^1.5.6",
+    "date-fns": "^2.15.0",
+    "gatsby": "^2.24.47",
+    "gatsby-plugin-manifest": "^2.4.23",
+    "gatsby-plugin-no-sourcemaps": "^2.2.0",
+    "gatsby-plugin-preact": "^4.0.9",
+    "gatsby-plugin-react-helmet": "^3.3.10",
+    "gatsby-plugin-sharp": "^2.6.27",
+    "gatsby-transformer-sharp": "^2.5.13",
+    "idb": "^5.0.4",
+    "preact": "^10.4.8",
+    "preact-render-to-string": "^5.1.10",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^6.1.0",
+    "react-loadable": "^5.5.0",
+    "react-micro-modal": "^1.7.3",
+    "react-nice-dates": "^3.0.6",
+    "react-trend": "^1.2.5",
+    "snarkdown": "^1.2.2",
+    "typeface-nunito": "^1.1.3"
+  },
+  "devDependencies": {
+    "gatsby-plugin-offline": "^3.2.23",
+    "prettier": "^2.0.5"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "dev": "gatsby develop --https",
+    "dev-m": "gatsby develop --https -H 0.0.0.0 -p 8000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}
