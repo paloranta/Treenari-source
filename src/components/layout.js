@@ -29,7 +29,7 @@ const Layout = ({ children }) => (
           <main>{children}</main>
           <footer className="footer">
             <small>
-              Source code on <a href="https://github.com/paloranta/Treenari/">Github</a>
+              Source code on <a href="https://github.com/paloranta/Treenari-source">Github</a>
             </small>            
           </footer>
         </div>
