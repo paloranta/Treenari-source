@@ -1,7 +1,7 @@
 .nice-dates-navigation {
   -webkit-box-align: center;
           align-items: center;
-  color: #333;
+  color: #000;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: justify;
@@ -23,8 +23,8 @@
   width: calc(100% / 7);
 }
 .nice-dates-navigation_previous:before, .nice-dates-navigation_next:before {
-  border-right: 2px solid #999;
-  border-top: 2px solid #999;
+  border-right: 2px solid #000;
+  border-top: 2px solid #000;
   box-sizing: border-box;
   content: "";
   display: block;
@@ -41,7 +41,7 @@
   width: 14px;
 }
 .nice-dates-navigation_previous:hover:before, .nice-dates-navigation_next:hover:before {
-  border-color: #333;
+  border-color: #000;
 }
 .nice-dates-navigation_previous.-disabled, .nice-dates-navigation_next.-disabled {
   cursor: default;
@@ -61,7 +61,7 @@
   padding: 8px 0;
 }
 .nice-dates-week-header_day {
-  color: #999;
+  color: #000;
   font-size: 14px;
   line-height: 1;
   text-align: center;
@@ -113,7 +113,7 @@
 .nice-dates-day {
   border-top: 1px solid transparent;
   box-sizing: border-box;
-  color: #333;
+  color: #000;
   cursor: pointer;
   font-size: 14px;
   position: relative;
@@ -127,7 +127,7 @@
           justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-          flex-direction: column;
+          flex-direction: column;  
 }
 .nice-dates-day_date {
   -webkit-transition: 150ms color;
@@ -136,7 +136,7 @@
   z-index: 3;
 }
 .nice-dates-day_month {
-  color: #999;
+  color: #000;
   font-size: 12px;
   left: 0;
   line-height: 1;
@@ -163,7 +163,7 @@
   z-index: 1;
 }
 .nice-dates-day:after {
-  border: 2px solid #333;
+  border: 2px solid #000;
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
   -webkit-transition-duration: 150ms;
@@ -227,12 +227,12 @@
   right: 12.5%;
 }
 .nice-dates-day.-outside {
-  color: #999;
+  color: #000;
 }
 .nice-dates-day.-disabled {
   cursor: default;
   pointer-events: none;
-  color: #ddd;
+  color: #898989;
 }
 .nice-dates-popover {
   background-color: #fff;

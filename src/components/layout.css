@@ -1096,7 +1096,7 @@ input:disabled {
 .eiKaytossa {
   margin: .5em;
   background: #F5F5F5;
-  color : #C3C3C3;
+  color : #898989;
   cursor:none;
   pointer-events: none;
   border-radius: 5px;
@@ -1156,7 +1156,7 @@ input[type="radio"]:checked+label+li {
 
 .siteheader {
   z-index: 100;
-  background-color: #4cb050;
+  background-color: #398e3d;
   display: flex;
   position: sticky;
   top: 0;
@@ -1173,6 +1173,7 @@ input[type="radio"]:checked+label+li {
   display: inline-block;
   position: relative;
   color: white;
+  font-weight: 700;
 }
 
 .navlink::after {
@@ -1288,5 +1289,10 @@ input[type="radio"]:checked+label+li {
 
 .modal-slide[aria-hidden="true"] .modal-container {
   animation: modal-slide-out 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.jakso {
+  font-weight: 700;
+  font-size: .85rem;
 }
 
