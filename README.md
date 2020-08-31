@@ -1,6 +1,7 @@
 # Treenari
 [https://paloranta.github.io/Treenari/](https://paloranta.github.io/Treenari/)
 A workout-reminder PWA, using Notification Triggers API, IndexedDB and Gatsby — currently only in Finnish.
+Needs Chrome or a derivative browser that has `#enable-experimental-web-platform-features` flag set in `chrome://flags`.
 
 Thanks go to:
 - [https://github.com/nico-martin/todo-pwa](https://github.com/nico-martin/todo-pwa) — Nico Martin for the great tutorial at [CSS-tricks](https://css-tricks.com/creating-scheduled-push-notifications/) and the "Add2Home"-component.
