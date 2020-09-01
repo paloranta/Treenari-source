@@ -1,5 +1,5 @@
 # Treenari
-[https://paloranta.github.io/Treenari/](https://paloranta.github.io/Treenari/)
+[https://paloranta.github.io/Treenari/](https://paloranta.github.io/Treenari/) 
 A workout-reminder PWA, using Notification Triggers API, IndexedDB and Gatsby — currently only in Finnish.
 Needs Chrome or a derivative browser that has `#enable-experimental-web-platform-features` flag set in `chrome://flags`.
 
@@ -12,3 +12,13 @@ Thanks go to:
 - [https://github.com/unsplash/react-trend](https://github.com/unsplash/react-trend) — A graph library
 - [https://github.com/Meemaw/react-micro-modal](https://github.com/Meemaw/react-micro-modal) — A modal component
 - [https://github.com/gatsbyjs/gatsby/.../gatsby-plugin-offline](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-offline) — Service worker as a Gatsby plugin.
+
+![logo][logo]
+
+[logo]: https://github.com/paloranta/Treenari-source/blob/master/src/images/treenari.png "logo"
+
+![screenshot][screenshot]
+
+[screenshot]: https://github.com/paloranta/Treenari-source/blob/master/overview.png "Screenshot"
+
+
