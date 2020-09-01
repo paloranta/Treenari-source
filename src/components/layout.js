@@ -10,6 +10,21 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
+import Darkmode from "darkmode-js";
+
+// Dark mode-alustus
+let options = {
+  saveInCookies: "false",
+  mixColor: "#fff", // default: "#fff"
+  backgroundColor: "#f3f2f1",  // default: "#fff"   
+  bottom: '1em', // default: '32px'
+  right: '1em', // default: '32px'    
+  time: '0.0s', // default: '0.3s'
+}
+
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+console.log("darkmode: ", darkmode.isActivated())
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -30,7 +45,7 @@ const Layout = ({ children }) => (
           <footer className="footer">
             <small>
               Source code on <a href="https://github.com/paloranta/Treenari-source">Github</a>
-            </small>            
+            </small>
           </footer>
         </div>
       </>

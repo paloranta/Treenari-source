@@ -7,7 +7,6 @@ import Add2Home from "../components/Add2Home"
 import { DateRangePickerCalendar, START_DATE } from "react-nice-dates"
 import "../components/style.css"
 import Tietovarasto from "../db/Tietovarasto";
-import Darkmode from "darkmode-js";
 import Loadable from 'react-loadable'; //Tämä tarvitaan modaleita varten, ne eivät toimi Gatsbyn kanssa hyvin.
 import { fi } from 'date-fns/locale';
 
@@ -41,16 +40,6 @@ export default function Treenari() {
   }
 
   const divs = document.querySelector("div");
-
-  // Dark mode-alustus
-  let options = {
-    saveInCookies: "false",
-    mixColor: "#fff", // default: "#fff"
-    backgroundColor: "#f3f2f1",  // default: "#fff"   
-    bottom: '1em', // default: '32px'
-    right: '1em', // default: '32px'    
-    time: '0.0s', // default: '0.3s'
-  }
   
   if (startDate !== undefined) {
     Tietovarasto.set("harjoitukset", "aloitusPvm", startDate)
@@ -68,11 +57,6 @@ export default function Treenari() {
     Tietovarasto.get("harjoitukset", "lopetusPvm").then(pvm => setEndDate(pvm));
     Tietovarasto.get("harjoitukset", "treenipaivat").then(pvm => setTreenipaivat(pvm));
     Tietovarasto.get("harjoitukset", "muistutus").then(pvm => setTreeniaika(pvm));
-    if (!divs.classList.contains("darkmode-background")) {
-      const darkmode = new Darkmode(options);
-      darkmode.showWidget();
-      console.log("darkmode: ", darkmode.isActivated())
-    }
     //Tarkistetaan tukeeko selain notification trigger APIa
     if (!"showTrigger" in Notification.prototype) { // eslint-disable-line
       setVaroitus(true); // eslint-disable-line
@@ -112,8 +96,8 @@ export default function Treenari() {
       : <div className="shadow-box">
           <h2 className="markerheader">{sisalto()}</h2>
           <br/>
-          {startDate === undefined && <h5 className="space">Tänään on {tanaan}</h5>}
-          {startDate !== undefined && <h5 className="space">{startDate ? startDate.toLocaleDateString("fi") : ""}—{endDate ? endDate.toLocaleDateString("fi") : ""} {treeniPaivat && <span>— treenipäivät: {treeniPaivat.toLowerCase()} — muistutus klo: {treeniaika}</span>}</h5>}
+          {startDate === undefined && <p className="space jakso">Tänään on {tanaan}</p>}
+          {startDate !== undefined && <p className="space jakso">{startDate ? startDate.toLocaleDateString("fi") : ""}—{endDate ? endDate.toLocaleDateString("fi") : ""} {treeniPaivat && <span>— treenipäivät: {treeniPaivat.toLowerCase()} — muistutus klo: {treeniaika}</span>}</p>}
           <div className={disabled ? "poisKaytosta inset" : ""}>
             <DateRangePickerCalendar
               startDate={startDate}
