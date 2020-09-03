@@ -58,7 +58,7 @@ export default function Treenari() {
     Tietovarasto.get("harjoitukset", "treenipaivat").then(pvm => setTreenipaivat(pvm));
     Tietovarasto.get("harjoitukset", "muistutus").then(pvm => setTreeniaika(pvm));
     //Tarkistetaan tukeeko selain notification trigger APIa
-    if (!"showTrigger" in Notification.prototype) { // eslint-disable-line
+    if (!("showTrigger" in Notification.prototype)) { // eslint-disable-line
       setVaroitus(true); // eslint-disable-line
     } // eslint-disable-line
   }, []);
