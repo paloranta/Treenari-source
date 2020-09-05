@@ -1154,6 +1154,10 @@ input[type="radio"]:checked+label+li {
   pointer-events: none;
 }
 
+.poisKaytosta .nice-dates-grid .nice-dates-grid_container .-disabled {
+  background-color: unset;
+}
+
 .siteheader {
   z-index: 100;
   background-color: #398e3d;
