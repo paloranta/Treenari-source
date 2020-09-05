@@ -28,7 +28,7 @@ const Mediaani = (props) => {
     }
 
     return (
-        <p className={props.hetki === "alku" ? "markerheader" : "markerheader-yellow"}>Mediaaniolotila ennen treeniä: {mediaani(props.lista)} / 5</p>        
+        <p className={props.hetki === "alku" ? "markerheader" : "markerheader-yellow"}>{props.hetki === "alku" ? "Mediaaniolotila ennen treeniä: " : "Mediaaniolotila treenin jälkeen: "}{mediaani(props.lista)} / 5</p>        
     )
 }
 
