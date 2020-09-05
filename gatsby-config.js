@@ -1,15 +1,16 @@
 module.exports = {
   pathPrefix: "/Treenari",
-  siteMetadata: {    
+  siteMetadata: {
     title: "Treenari",
     subtitle: "muistuttaa treeneistä",
     description: "Treenimuistutin",
-    author: "@paloranta",    
+    author: "@paloranta",
   },
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
+    "gatsby-plugin-preact",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -26,7 +27,11 @@ module.exports = {
     {
       resolve: "gatsby-plugin-no-sourcemaps",
     },
-    "gatsby-plugin-offline",
-   "gatsby-plugin-preact",
+    {
+      resolve: "gatsby-plugin-offline",
+      options: {
+        precachePages: ["/", "/historia/", "/treeni/"],
+      }
+    },
   ],
 }
