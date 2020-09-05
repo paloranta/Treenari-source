@@ -1,6 +1,9 @@
 # Treenari
-[https://paloranta.github.io/Treenari/](https://paloranta.github.io/Treenari/) 
-A workout-reminder PWA, using Notification Triggers API, IndexedDB and Gatsby — currently only in Finnish.
+In Finnish: [https://paloranta.github.io/Treenari/](https://paloranta.github.io/Treenari/) 
+
+In English: [https://paloranta.github.io/Workout-reminder/](https://paloranta.github.io/Workout-reminder/) 
+
+A workout-reminder PWA, using Notification Triggers API, IndexedDB and Gatsby.
 Needs Chrome or a derivative browser that has `#enable-experimental-web-platform-features` flag set in `chrome://flags`.
 
 Thanks go to:
