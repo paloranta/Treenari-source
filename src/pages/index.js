@@ -52,11 +52,10 @@ export default function Treenari() {
   let tanaan = new Date().toLocaleDateString("fi");
 
   useEffect(() => {
-    //setMounted(true); // Tämä tässä, koska muuten tallennusmodal näyttää liian aikaisin
-    Tietovarasto.get("harjoitukset", "aloitusPvm").then(pvm => setStartDate(pvm));
-    Tietovarasto.get("harjoitukset", "lopetusPvm").then(pvm => setEndDate(pvm));
-    Tietovarasto.get("harjoitukset", "treenipaivat").then(pvm => setTreenipaivat(pvm));
-    Tietovarasto.get("harjoitukset", "muistutus").then(pvm => setTreeniaika(pvm));
+      Tietovarasto.get("harjoitukset", "aloitusPvm").then(pvm => setStartDate(pvm));
+      Tietovarasto.get("harjoitukset", "lopetusPvm").then(pvm => setEndDate(pvm));
+      Tietovarasto.get("harjoitukset", "treenipaivat").then(pvm => setTreenipaivat(pvm));
+      Tietovarasto.get("harjoitukset", "muistutus").then(pvm => setTreeniaika(pvm)); 
     //Tarkistetaan tukeeko selain notification trigger APIa
     if (!("showTrigger" in Notification.prototype)) { // eslint-disable-line
       setVaroitus(true); // eslint-disable-line
@@ -92,7 +91,7 @@ export default function Treenari() {
       <SEO title="Treenari" keywords={[`gatsby`, `pwa`, `react`, `prototype`]} />
       <LandingBio />
       <div className="centrify">
-      {varoitus ? <div className="shadow-box"><h3>Selaimesi ei tue ajastustoimintoa</h3> <p>Jos käytät Chromea, aseta <code>#enable-experimental-web-platform-features</code>-flag päälle <code>chrome://flags</code> -asetuksissa.</p></div>
+      {varoitus ? <div className="shadow-box"><h2>Selaimesi ei tue ajastustoimintoa</h2> <p>Jos käytät Chromea, aseta <code><a href="chrome://flags#enable-experimental-web-platform-features">#enable-experimental-web-platform-features</a></code>-flag päälle <code><a href="chrome://flags#enable-experimental-web-platform-features">chrome://flags</a></code> -asetuksissa.</p></div>
       : <div className="shadow-box">
           <h2 className="markerheader">{sisalto()}</h2>
           <br/>

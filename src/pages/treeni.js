@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../components/layout"
 import Ajastin from "../components/Ajastin"
+import SEO from "../components/seo"
 import Fiilis from "../components/Fiilis"
 import Kommentit from "../components/Kommentit"
 import Harjoitteet from "../components/Harjoitteet";
@@ -8,8 +9,8 @@ import Treenijakso from "../components/Treenijakso";
 
 export default function Treenaus() {
   const [tallennusID, setTallennusID] = useState("");
-  const [alkufiilis, setAlkuFiilis] = useState("");  // Nämä vain kommentteihin tallennusta varten
-  const [loppufiilis, setLoppuFiilis] = useState("");  // Nämä vain kommentteihin tallennusta varten
+  const [alkufiilis, setAlkuFiilis] = useState("");       // Nämä vain kommentteihin tallennusta varten
+  const [loppufiilis, setLoppuFiilis] = useState("");     // Nämä vain kommentteihin tallennusta varten
   const [kommentti, setKommentti] = useState([]);
 
   useEffect(() => {
@@ -24,6 +25,7 @@ export default function Treenaus() {
 
   return (
     <Layout>
+      <SEO title="Treenari" keywords={[`gatsby`, `pwa`, `react`, `prototype`]} />
       <h1 className="iso">Treeni</h1>
       <div className="outer-2-tasa flex-grid">
         <Harjoitteet />
