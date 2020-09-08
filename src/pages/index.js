@@ -35,12 +35,13 @@ export default function Treenari() {
   const [varoitus, setVaroitus] = useState(false);
   const [treeniaika, setTreeniaika] = useState();
   const [treeniPaivat, setTreenipaivat] = useState();
+  const [loading, setLoading] = useState(true);
   const handleFocusChange = newFocus => {
     setFocus(newFocus || START_DATE)
   }
 
   const divs = document.querySelector("div");
-  
+
   if (startDate !== undefined) {
     Tietovarasto.set("harjoitukset", "aloitusPvm", startDate)
   }
@@ -52,14 +53,15 @@ export default function Treenari() {
   let tanaan = new Date().toLocaleDateString("fi");
 
   useEffect(() => {
-      Tietovarasto.get("harjoitukset", "aloitusPvm").then(pvm => setStartDate(pvm));
-      Tietovarasto.get("harjoitukset", "lopetusPvm").then(pvm => setEndDate(pvm));
-      Tietovarasto.get("harjoitukset", "treenipaivat").then(pvm => setTreenipaivat(pvm));
-      Tietovarasto.get("harjoitukset", "muistutus").then(pvm => setTreeniaika(pvm)); 
+    Tietovarasto.get("harjoitukset", "aloitusPvm").then(pvm => setStartDate(pvm));
+    Tietovarasto.get("harjoitukset", "lopetusPvm").then(pvm => setEndDate(pvm));
+    Tietovarasto.get("harjoitukset", "treenipaivat").then(pvm => setTreenipaivat(pvm));
+    Tietovarasto.get("harjoitukset", "muistutus").then(pvm => setTreeniaika(pvm));
     //Tarkistetaan tukeeko selain notification trigger APIa
     if (!("showTrigger" in Notification.prototype)) { // eslint-disable-line
       setVaroitus(true); // eslint-disable-line
     } // eslint-disable-line
+    setLoading(false);
   }, []);
 
   useEffect(() => {
@@ -90,29 +92,29 @@ export default function Treenari() {
     <Layout>
       <SEO title="Treenari" keywords={[`gatsby`, `pwa`, `react`, `prototype`]} />
       <LandingBio />
-      <div className="centrify">
-      {varoitus ? <div className="shadow-box"><h2>Selaimesi ei tue ajastustoimintoa</h2> <p>Jos käytät Chromea, aseta <code><a href="chrome://flags#enable-experimental-web-platform-features">#enable-experimental-web-platform-features</a></code>-flag päälle <code><a href="chrome://flags#enable-experimental-web-platform-features">chrome://flags</a></code> -asetuksissa.</p></div>
-      : <div className="shadow-box">
-          <h2 className="markerheader">{sisalto()}</h2>
-          <br/>
-          {startDate === undefined && <p className="space jakso">Tänään on {tanaan}</p>}
-          {startDate !== undefined && <p className="space jakso">{startDate ? startDate.toLocaleDateString("fi") : ""}—{endDate ? endDate.toLocaleDateString("fi") : ""} {treeniPaivat && <span>— treenipäivät: {treeniPaivat.toLowerCase()} — muistutus klo: {treeniaika}</span>}</p>}
-          <div className={disabled ? "poisKaytosta inset" : ""}>
-            <DateRangePickerCalendar
-              startDate={startDate}
-              endDate={endDate}
-              focus={focus}
-              onStartDateChange={setStartDate} // asetetaan uusi aloituspäivämäärä
-              onEndDateChange={setEndDate} // asetetaan uusi lopetuspäivämäärä
-              onFocusChange={handleFocusChange}
-              locale={fi}
-              minimumDate={new Date()}
-            />
-          </div>
-        </div>}
+      <div className="fadein centrify">
+        {varoitus ? <div className="shadow-box"><h2>Selaimesi ei tue ajastustoimintoa</h2> <p>Jos käytät Chromea, aseta <code><a href="chrome://flags#enable-experimental-web-platform-features">#enable-experimental-web-platform-features</a></code>-flag päälle <code><a href="chrome://flags#enable-experimental-web-platform-features">chrome://flags</a></code> -asetuksissa.</p></div>
+          : <div className="shadow-box">
+            <h2 className="markerheader">{sisalto()}</h2>
+            <br />
+            {startDate === undefined && <p className="space jakso">Tänään on {tanaan}</p>}
+            {startDate !== undefined && <p className="space jakso">{startDate ? startDate.toLocaleDateString("fi") : ""}—{endDate ? endDate.toLocaleDateString("fi") : ""} {treeniPaivat && <span>— treenipäivät: {treeniPaivat.toLowerCase()} — muistutus klo: {treeniaika}</span>}</p>}
+            <div className={disabled ? "poisKaytosta inset" : ""}>
+              <DateRangePickerCalendar                
+                startDate={startDate}
+                endDate={endDate}
+                focus={focus}
+                onStartDateChange={setStartDate} // asetetaan uusi aloituspäivämäärä
+                onEndDateChange={setEndDate} // asetetaan uusi lopetuspäivämäärä
+                onFocusChange={handleFocusChange}
+                locale={fi}
+                minimumDate={new Date()}
+              />
+            </div>
+          </div>}
         <TyhjennysModal aloituspvm={setStartDate} lopetuspvm={setEndDate} poisKaytosta={setDisabled} />
         <TallennusModal haeAloituspvm={haeAloituspvm} haeLopetuspvm={haeLopetuspvm} poisKaytosta={disabled} treeniAika={setTreeniaika} treeniPaivat={setTreenipaivat} />
-        <Add2Home />       
+        <Add2Home />
 
       </div>
     </Layout>)

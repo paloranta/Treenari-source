@@ -50,7 +50,7 @@ const HistoriaKommentti = () => {
                             <button onClick={() => deleteKommentti(val, val[4])} className="nappi-error">
                                 ❌
             </button>
-                            <p dangerouslySetInnerHTML={{ __html: snarkdown(val[1].toString()) }} />
+                            <p className="kommentti" dangerouslySetInnerHTML={{ __html: snarkdown(val[1].toString()) }} />
 
                         </div>
                     })}

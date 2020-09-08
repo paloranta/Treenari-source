@@ -853,7 +853,6 @@ a::selection {
   color: black;
 }
 
-
 .rotate {
   transform: rotate(90deg);
 }
@@ -1096,7 +1095,7 @@ input:disabled {
 .eiKaytossa {
   margin: .5em;
   background: #F5F5F5;
-  color : #898989;
+  color : #333;
   cursor:none;
   pointer-events: none;
   border-radius: 5px;
@@ -1155,6 +1154,10 @@ input[type="radio"]:checked+label+li {
 }
 
 .poisKaytosta .nice-dates-grid .nice-dates-grid_container .-disabled {
+  background-color: unset;
+}
+
+.poisKaytosta .nice-dates-grid .nice-dates-grid_container .nice-dates-day {
   background-color: unset;
 }
 
@@ -1298,5 +1301,18 @@ input[type="radio"]:checked+label+li {
 .jakso {
   font-weight: 700;
   font-size: .85rem;
+}
+
+.fadein {
+    animation: fadein 1s;
+}
+  @keyframes fadein {
+    from { opacity: 0}
+    to   { opacity: 1}
+}
+
+.kommentti {
+  max-width: 699px;
+  min-width: 200px;
 }
 

@@ -91,7 +91,7 @@ const Kommentit = (props) => {
           <button onClick={() => deleteKommentti(kommentit[4])} className="nappi-error">
             ❌
           </button>
-          <p dangerouslySetInnerHTML=
+          <p className="kommentti" dangerouslySetInnerHTML=
             {{ __html: snarkdown(Array.isArray(kommentit) && kommentit.length > 1 && kommentit[1].toString().replace(/^"(.*)"$/, "$1")) }}>
           </p>
         </div>}
