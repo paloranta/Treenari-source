@@ -38,7 +38,7 @@ export default function Historia() {
             autoDrawDuration={1000}
             autoDrawEasing="ease-out"
             data={alkufiilisNumerot}
-            gradient={["yellow"]}
+            gradient={["#4cb050"]}
             radius={20}
             strokeWidth={3}
             strokeLinecap={"round"}
@@ -51,7 +51,7 @@ export default function Historia() {
             autoDrawDuration={1000}
             autoDrawEasing="ease-out"
             data={loppufiilisNumerot}
-            gradient={["#4cb050"]}
+            gradient={["yellow"]}
             radius={20}
             strokeWidth={3}
             strokeLinecap={"round"}
