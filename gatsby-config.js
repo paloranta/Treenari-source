@@ -19,7 +19,7 @@ module.exports = {
         background_color: "#398e3d",
         theme_color: "#4cb050",
         display: "standalone",
-        start_url: "/treeni",
+        start_url: "/treeni/",
         icon: "src/images/treenari.png", // This path is relative to the root of the site.
         crossOrigin: "use-credentials",
       },
@@ -31,6 +31,7 @@ module.exports = {
       resolve: "gatsby-plugin-offline",
       options: {
         precachePages: ["/", "/historia/", "/treeni/"],
+        appendScript: require.resolve(`./custom-sw-code.js`),
       }
     },
   ],
