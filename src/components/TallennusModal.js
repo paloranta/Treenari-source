@@ -59,6 +59,9 @@ Muistutusaika: ` + muistutusAika;
 						badge: "./icons/icon-96x96.png",
 						icon: "./icons/icon-96x96.png",
 						vibrate: [200, 100, 200, 100, 200, 100, 200],
+						data: {
+							url: "https://paloranta.github.io/Treenari/treeni/"
+						}
 					});
 				});
 			}

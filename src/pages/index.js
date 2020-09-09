@@ -91,7 +91,7 @@ export default function Treenari() {
     <Layout>
       <SEO title="Treenari" keywords={[`gatsby`, `pwa`, `react`, `prototype`]} />
       <LandingBio />
-      <div className="fadein centrify">
+      <div className="centrify">
         {varoitus ? <div className="shadow-box"><h2>Selaimesi ei tue ajastustoimintoa</h2> <p>Jos käytät Chromea, aseta <code><a href="chrome://flags#enable-experimental-web-platform-features">#enable-experimental-web-platform-features</a></code>-flag päälle <code><a href="chrome://flags#enable-experimental-web-platform-features">chrome://flags</a></code> -asetuksissa.</p></div>
           : <div className="shadow-box">
             <h2 className="markerheader">{sisaltoteksti}</h2>
@@ -111,8 +111,8 @@ export default function Treenari() {
               />
             </div>
           </div>}
-        <TyhjennysModal aloituspvm={setStartDate} lopetuspvm={setEndDate} poisKaytosta={setDisabled} />
-        <TallennusModal haeAloituspvm={haeAloituspvm} haeLopetuspvm={haeLopetuspvm} poisKaytosta={disabled} treeniAika={setTreeniaika} treeniPaivat={setTreenipaivat} />
+        {varoitus ? "" : <TyhjennysModal aloituspvm={setStartDate} lopetuspvm={setEndDate} poisKaytosta={setDisabled} eiKaytossa={varoitus}/>}
+        {varoitus ? "" : <TallennusModal haeAloituspvm={haeAloituspvm} haeLopetuspvm={haeLopetuspvm} poisKaytosta={disabled} treeniAika={setTreeniaika} treeniPaivat={setTreenipaivat} />}
         <Add2Home />
 
       </div>
