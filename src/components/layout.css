@@ -50,9 +50,7 @@ a {
   color: hsla(0, 0%, 0%, 0.8);
   -webkit-text-decoration-skip: objects;
 }
-.darkmode--activated a {
-  color: #fafafa;
-}
+
 a:active,
 a:hover {
   outline-width: 0;
