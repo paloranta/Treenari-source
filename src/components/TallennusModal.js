@@ -128,7 +128,7 @@ Muistutusaika: ` + muistutusAika;
 				</div>
 				<div className="space">
 					<button id="peruuta" className="nappi-error" name="peruuta" onClick={handleClose}>Peruuta</button>
-					<button id="tallenna" name="tallenna" className={muistutusAika && treeniPaivat ? "nappi" : "eiKaytossa"} type="" onMouseDown={() => tallennaTreeni()} onClick={handleClose}>{muistutusAika && treeniPaivat ? "Tallenna" : "Täytä kaikki kentät"}</button>
+					<button id="tallenna" name="tallenna" className={setEka && setToka && setKolmas && muistutusAika && treeniPaivat ? "nappi" : "eiKaytossa"} type="" onMouseDown={() => tallennaTreeni()} onClick={handleClose}>{muistutusAika && treeniPaivat ? "Tallenna" : "Täytä kaikki kentät"}</button>
 				</div>
 
 			</div>
