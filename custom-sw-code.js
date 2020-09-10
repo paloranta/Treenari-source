@@ -19,12 +19,7 @@ self.addEventListener("notificationclick", event => {
         .then(windowClient => (windowClient ? windowClient.focus() : null));
     }
     notification.close();
-    return sendNotificationDoneMessage(notification);
   });
 
   event.waitUntil(eventWaitUntilFullfilled);
 });
-
-self.addEventListener("notificationclose", event =>
-  event.waitUntil(sendNotificationDoneMessage(event.notification, "closed"))
-);
