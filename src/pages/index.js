@@ -35,6 +35,7 @@ export default function Treenari() {
   const [treeniaika, setTreeniaika] = useState();
   const [treeniPaivat, setTreenipaivat] = useState();
   const [sisaltoteksti, setSisaltoteksti] = useState("");
+  const [naytaLomake, setNaytaLomake] = useState(false);
   const handleFocusChange = newFocus => {
     setFocus(newFocus || START_DATE)
   }
@@ -76,6 +77,7 @@ export default function Treenari() {
         setSisaltoteksti("Valitse aloituspäivämäärä");
       } else {
         setSisaltoteksti("Treenijakso tallennettu!");
+        setNaytaLomake(true);
       }
   }, [focus]);
 
@@ -112,7 +114,7 @@ export default function Treenari() {
             </div>
           </div>}
         {varoitus ? "" : <TyhjennysModal aloituspvm={setStartDate} lopetuspvm={setEndDate} poisKaytosta={setDisabled} eiKaytossa={varoitus}/>}
-        {varoitus ? "" : <TallennusModal haeAloituspvm={haeAloituspvm} haeLopetuspvm={haeLopetuspvm} poisKaytosta={disabled} treeniAika={setTreeniaika} treeniPaivat={setTreenipaivat} />}
+        {varoitus ? "" : <TallennusModal haeAloituspvm={haeAloituspvm} haeLopetuspvm={haeLopetuspvm} poisKaytosta={disabled} treeniAika={setTreeniaika} treeniPaivat={setTreenipaivat} naytaLomake={naytaLomake} setNaytaLomake={setNaytaLomake}/>}
         <Add2Home />
 
       </div>

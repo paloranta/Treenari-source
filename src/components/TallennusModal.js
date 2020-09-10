@@ -101,6 +101,8 @@ Muistutusaika: ` + muistutusAika;
 
 	return (
 		<MicroModal
+			open={props.naytaLomake}
+			handleClose={() => props.setNaytaLomake(false)}
 			closeOnAnimationEnd={true}
 			trigger={handleOpen => <button className={props.poisKaytosta ? "nappi space" : "eiKaytossa space"} onClick={handleOpen}>{props.poisKaytosta ? "Harjoitteet ja muistutus" : "Valitse treenijakso"}</button>}
 			children={handleClose => <div>
