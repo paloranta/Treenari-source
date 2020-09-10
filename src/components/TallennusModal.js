@@ -104,7 +104,7 @@ Muistutusaika: ` + muistutusAika;
 			open={props.naytaLomake}
 			handleClose={() => props.setNaytaLomake(false)}
 			closeOnAnimationEnd={true}
-			trigger={handleOpen => <button className={props.poisKaytosta ? "nappi space" : "eiKaytossa space"} onClick={handleOpen}>{props.poisKaytosta ? "Harjoitteet ja muistutus" : "Valitse treenijakso"}</button>}
+			trigger={handleOpen => <button className={props.poisKaytosta ? "nappi space" : "eiKaytossa space"} onClick={() => props.setNaytaLomake(true)}>{props.poisKaytosta ? "Harjoitteet ja muistutus" : "Valitse treenijakso"}</button>}
 			children={handleClose => <div>
 				<h1>Harjoitteet ja muistutusaika</h1>
 				<p>Kirjoita harjoitteet ja muistutusaika. Tallentaminen ylikirjoittaa vanhat tiedot.</p>
