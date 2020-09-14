@@ -27,12 +27,6 @@ module.exports = {
     {
       resolve: "gatsby-plugin-no-sourcemaps",
     },
-    {
-      resolve: "gatsby-plugin-offline",
-      options: {
-        precachePages: ["/", "/historia/", "/treeni/"],
-        appendScript: require.resolve(`./custom-sw-code.js`),
-      }
-    },
+    "gatsby-plugin-offline",
   ],
 }
