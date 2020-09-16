@@ -27,6 +27,11 @@ module.exports = {
     {
       resolve: "gatsby-plugin-no-sourcemaps",
     },
-    "gatsby-plugin-offline",
+    {
+      resolve: "gatsby-plugin-offline",
+      options: {
+        appendScript: require.resolve("./custom-sw-code.js"),
+    }
   ],
 }
+
