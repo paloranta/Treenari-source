@@ -31,15 +31,16 @@ Muistutusaika: ` + muistutusAika;
 
 	const luoMuistutus = async (body, title, muistutus) => {
 		const registration = await navigator.serviceWorker.getRegistration();
+		console.log(registration);
 		if (registration !== undefined) {
 			registration.showNotification(title, {
 				body: body,
 				badge: "./icons/icon-96x96.png",
 				icon: "./icons/icon-96x96.png",
-				tag: "treenari",
+				tag: muistutus,
 				vibrate: [200, 100, 200, 100, 200, 100, 200],
 				showTrigger: new TimestampTrigger(muistutus), // eslint-disable-line
-			});
+			});			
 		}
 		console.log("Muistutus luotu: ", title, body, muistutus);
 	};
@@ -59,9 +60,6 @@ Muistutusaika: ` + muistutusAika;
 						badge: "./icons/icon-96x96.png",
 						icon: "./icons/icon-96x96.png",
 						vibrate: [200, 100, 200, 100, 200, 100, 200],
-						data: {
-							url: "https://paloranta.github.io/Treenari/treeni/"
-						}
 					});
 				});
 			}

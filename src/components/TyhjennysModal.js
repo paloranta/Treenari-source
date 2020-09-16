@@ -5,10 +5,10 @@ import "./layout.css"
 
 const TyhjennysModal = (props) => {
 
-	const poistaMuistutukset = async (tag) => {
+	const poistaMuistutukset = async () => {
 		const registration = await navigator.serviceWorker.getRegistration();
 		if (registration !== undefined) {
-			const notifications = await registration.getNotifications({ tag: tag, includeTriggered: true, });
+			const notifications = await registration.getNotifications({ includeTriggered: true, });
 			notifications.forEach((notification) => notification.close());
 			console.log("Muistutukset poistettu")
 		}
@@ -27,7 +27,7 @@ const TyhjennysModal = (props) => {
 			props.lopetuspvm();
 			props.poisKaytosta(false);
 			if ("serviceWorker" in navigator) {
-				poistaMuistutukset("treenari");
+				poistaMuistutukset();
 				naytaIlmoitus();
 				console.log("Muistutukset poistettu.");
 			}
