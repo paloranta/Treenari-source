@@ -61,7 +61,7 @@ export default function Historia() {
       <br />
       <div className="outer-1-1 grow">
         <Mediaani lista={alkufiilisNumerot} hetki={"alku"} />
-        <Mediaani lista={alkufiilisNumerot} hetki={"loppu"} />
+        <Mediaani lista={loppufiilisNumerot} hetki={"loppu"} />
       </div>
       <HistoriaKommentti />
 
