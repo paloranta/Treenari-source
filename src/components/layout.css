@@ -1314,3 +1314,6 @@ input[type="radio"]:checked+label+li {
   min-width: 200px;
 }
 
+.break-all {
+  word-break: break-all;
+}

@@ -10,7 +10,7 @@ const Harjoitteet = () => {
     }, [])
 
     return (
-        <div className="shadow-box pad col">
+        <div className="shadow-box pad col break-all">
             <h3>Harjoitukset</h3>
             {harjoitukset.length > 0 &&
                 <ol>
