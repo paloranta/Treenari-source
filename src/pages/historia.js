@@ -66,7 +66,7 @@ if (alkufiilisNumerot.length > 29) {
 return (
   <Layout>
     <SEO title="Historia" keywords={[`gatsby`, `application`, `react`]} />
-    <h1 className="iso smaller">Treenihistoria</h1>
+    <h1 className="iso make-smaller">Treenihistoria</h1>
 
     <div className="outer-grid grow">
       <div>

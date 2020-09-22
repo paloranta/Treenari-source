@@ -27,7 +27,7 @@ export default function Treenaus() {
   return (
     <Layout>
       <SEO title="Treenari" keywords={[`gatsby`, `pwa`, `react`, `prototype`]} />
-      <h1 className="iso smaller">Treeni</h1>
+      <h1 className="iso make-smaller">Treeni</h1>
       <div className="outer-2-tasa flex-grid">
         <Harjoitteet />
         <Treenijakso />        
