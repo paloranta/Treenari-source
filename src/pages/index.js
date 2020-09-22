@@ -61,14 +61,14 @@ export default function Treenari() {
     } // eslint-disable-line 
   }, []);
 
-  useEffect(() => {
-    if (endDate !== undefined) {
-      setDisabled(true);
-      setSisaltoteksti("Treenijakso tallennettu!");
-    } else {
-      setSisaltoteksti("Valitse aloituspäivämäärä");
-    }
-  }, [endDate]);
+ useEffect(() => {
+   if (endDate !== undefined) {
+     setDisabled(true);
+     setSisaltoteksti("Treenijakso tallennettu!");
+   } else {
+     setSisaltoteksti("Valitse aloituspäivämäärä");
+   }
+ }, [endDate]);
 
   useEffect(() => {
       if (focus === "endDate") {

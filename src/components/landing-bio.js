@@ -15,7 +15,7 @@ const LandingBio = () => (
       }
     `}
     render={data => (
-     <div className="container">
+     <div className="container make-smaller">
        <h1 className="nameheader">Treenari</h1>
        <p className="description">muistuttaa treeneistä</p>
      </div>

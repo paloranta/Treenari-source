@@ -7,6 +7,7 @@ import Kommentit from "../components/Kommentit"
 import Harjoitteet from "../components/Harjoitteet";
 import Treenijakso from "../components/Treenijakso";
 
+
 export default function Treenaus() {
   const [tallennusID, setTallennusID] = useState("");
   const [alkufiilis, setAlkuFiilis] = useState("");       // Nämä vain kommentteihin tallennusta varten
@@ -26,7 +27,7 @@ export default function Treenaus() {
   return (
     <Layout>
       <SEO title="Treenari" keywords={[`gatsby`, `pwa`, `react`, `prototype`]} />
-      <h1 className="iso">Treeni</h1>
+      <h1 className="iso smaller">Treeni</h1>
       <div className="outer-2-tasa flex-grid">
         <Harjoitteet />
         <Treenijakso />        

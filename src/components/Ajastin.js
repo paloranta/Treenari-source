@@ -7,13 +7,13 @@ const Ajastin = () => {
 	const [sekunnit, setSekunnit] = useState(10 * 60); // Kymmenen minuuttia 
 
 	useEffect(() => {
-		const interval = setInterval(() => {
+		const sekunti = setInterval(() => {
 			if (!ajastinPysaytetty) {
 				setSekunnit((s) => s - 1);
 			}
 		}, 1000);
 		return () => {
-			clearInterval(interval);
+			clearInterval(sekunti);
 		};
 	}, [ajastinPysaytetty]);
 

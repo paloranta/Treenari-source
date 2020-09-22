@@ -642,6 +642,7 @@ a::selection {
   background: #ffffff;
   box-shadow:  5px 5px 10px #cfcecd, 
              -5px -5px 10px #f3f2f1;
+  z-index: 1;
 } 
 
 .inset-shadow {
@@ -1232,12 +1233,14 @@ input[type="radio"]:checked+label+li {
   padding: 0;
   margin-bottom: 1rem;
   font-size: 1.4rem;
+  justify-content: center;
 }
 
 .nameheader {
   font-size: 3.5rem;
   margin-bottom: 0;
   text-shadow: rgba(0,0,0,.25) 0 5px 10px;
+  justify-content: center;
 }
 
 .container {
@@ -1314,6 +1317,68 @@ input[type="radio"]:checked+label+li {
   min-width: 200px;
 }
 
+.einay {
+  visibility: hidden;
+}
+
 .break-all {
   word-break: break-all;
 }
+
+.dropzone {
+  border: dotted #000;
+  border-radius: 10px;
+  padding: 35px;
+  text-align: center;
+}
+
+.shadow-box-green {
+  background: #4cb050;
+  color: white;
+  padding: 2rem;
+  border-radius: .5rem;
+  box-shadow:  5px 5px 10px #d9d9d9, 
+              -5px -5px 10px #ffffff;
+} 
+
+.shadow-box-green:hover {
+  box-shadow: inset 5px 5px 10px #419644, 
+              inset -5px -5px 10px #57ca5c;
+} 
+
+.make-smaller {
+  animation: change .5s ease-in both;
+  animation-delay: 1s;
+  z-index: 1;
+}
+
+@keyframes change {
+  to   {     
+    height: 0;    
+    visibility: hidden;
+    scale: .4; 
+       }
+}
+
+@media only screen and (max-width: 600px) {
+  
+  .smaller {
+    animation: change1 .5s ease-in both;
+    animation-delay: 1s;
+  }
+
+  @keyframes change1 {
+    to   {         
+      font-size: 1.5rem; 
+         }
+  }
+
+}
+
+.collapsible {
+  padding: 1rem;
+  border-radius: .5rem;
+  background: #ffffff;
+  box-shadow:  5px 5px 10px #cfcecd, 
+             -5px -5px 10px #f3f2f1;
+} 

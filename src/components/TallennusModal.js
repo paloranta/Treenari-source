@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import MicroModal from "react-micro-modal"
 import Tietovarasto from "../db/Tietovarasto";
-import "./layout.css"
+import "./layout.css";
 
 const TallennusModal = (props) => {
 	const [eka, setEka] = useState("");

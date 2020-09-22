@@ -7,6 +7,7 @@ const Treenijakso = () => {
   const [muistutus, setMuistutus] = useState("");
   const [aloitusPvm, setAloitusPvm] = useState("");
   const [lopetusPvm, setLopetusPvm] = useState("");
+  const [collapse, setCollapse] = useState(true);
 
     useEffect(() => {
       if (typeof window !== "undefined") {
@@ -18,9 +19,9 @@ const Treenijakso = () => {
     }, [])
 
     return (
-        <div className="shadow-box pad col">
-          <h2>Treenijakso:</h2>            
-          <ul>
+        <div className="collapsible pad col">
+          <h3 className="markerheader" onClick={() => setCollapse(!collapse)}>Treenijakso: {collapse ? "+" : "-"}</h3>          
+          {!collapse && <><ul className="space fadein">
             <strong>{aloitusPvm}—{lopetusPvm}</strong>
             <br /><br />
             <strong>Treenipäivät</strong>:   
@@ -29,7 +30,7 @@ const Treenijakso = () => {
           </ul>
           <ul>
             <strong>Muistutusaika</strong>: <br />klo {muistutus}
-          </ul>
+          </ul></>}
         </div>
     )
 }

@@ -53,7 +53,7 @@ const TyhjennysModal = (props) => {
 	return (
 		<MicroModal
 			closeOnAnimationEnd={true}
-			trigger={handleOpen => <button className={props.eiKaytossa ? "eiKaytossa space": "nappi-error space"} onClick={handleOpen}>Tyhjennä kalenteri</button>}
+			trigger={handleOpen => <button className={props.eiKaytossa ? "eiKaytossa space": "nappi-error space"} onClick={handleOpen}>Tyhjennä</button>}
 			children={handleClose => <div><strong>Tyhjennys poistaa treenijakson ja poistaa muistutukset</strong><br /><button onClick={handleClose}>Peruuta</button><button className="nappi-error" onMouseDown={() => tyhjenna()} onClick={handleClose}>Varmista tyhjennys</button></div>}
 		/>
 	)
