@@ -27,7 +27,6 @@ export default function Historia() {
     Tietovarasto.getAll("loppufiilikset").then(val => setLoppufiilisArvot(val || []));
   }, [])
 
-
   function download(filename) {
     if (typeof window !== `undefined`) {
       IDBExportImport.exportToJsonString(database, function (err, jsonString) {
@@ -54,7 +53,6 @@ export default function Historia() {
     }
   }
 
-
 // Näytetään 30 viimeisintä tulosta viivakuvaajassa
 if (loppufiilisNumerot.length > 29) {
   loppufiilisNumerot = loppufiilisNumerot.slice(Math.max(loppufiilisNumerot.length - 30, 0))
@@ -80,6 +78,7 @@ return (
           radius={20}
           strokeWidth={3}
           strokeLinecap={"round"}
+          style={"height:auto"}
         />}
       </div>
       <div>
@@ -93,6 +92,7 @@ return (
           radius={20}
           strokeWidth={3}
           strokeLinecap={"round"}
+          style={"height:auto"}
         />}
       </div>
     </div>
